@@ -1,0 +1,26 @@
+[project]
+name = "wormsam2"
+version = "0.1.0"
+description = "SAM2 temporal propagation for stuck / coiled nematodes — companion tool for wormbot episodes"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python-headless>=4.8",
+    "scipy",
+    "scikit-image>=0.22",
+    "skan>=0.11",
+    "matplotlib>=3.7",
+    "huggingface_hub",
+    "tqdm",
+    "sam2>=1.1.0",
+]
+
+[project.scripts]
+wormsam2 = "wormsam2.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["wormsam2"]

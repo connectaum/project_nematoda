@@ -1,0 +1,6 @@
+# Optional: DeepTangleCrawl contact/coil solver (wormbot/pipeline/dtc_infer.py), CPU build
+-r requirements.txt
+jax[cpu]==0.4.30
+dm-haiku==0.0.12
+numba>=0.60
+chex

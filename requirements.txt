@@ -1,0 +1,11 @@
+# Classical pipeline, kinematics, DLC-project export (Python 3.10–3.12)
+numpy>=1.24,<2.3
+pandas
+scipy
+scikit-image>=0.22
+scikit-learn
+opencv-python-headless>=4.8
+skan>=0.11
+tables
+pyyaml
+matplotlib>=3.7

@@ -1,0 +1,39 @@
+services:
+  tgapi:
+    image: aiogram/telegram-bot-api:latest
+    restart: unless-stopped
+    environment:
+      TELEGRAM_API_ID: ${TELEGRAM_API_ID}
+      TELEGRAM_API_HASH: ${TELEGRAM_API_HASH}
+      TELEGRAM_LOCAL: 1
+    volumes:
+      - tgapi-data:/var/lib/telegram-bot-api
+    mem_limit: 512m
+
+  bot:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - tgapi
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      API_URL: http://tgapi:8081
+      ALLOWED_USERS: ${ALLOWED_USERS:-}
+      PROJECT_PATH_PREFIX: ${PROJECT_PATH_PREFIX:-/path/to/project_nematoda}
+      OVERLAY_SCALE: "1.0"
+      NFRAMES: "60"
+      KEEP_DAYS: "90"
+      PIPELINE_WORKERS: "4"
+      H264_PRESET: medium
+      H264_CRF: "23"
+      DTC_ENABLE: "1"
+      DTC_MODEL_DIR: /models/dtc/base
+      DTC_FT: /models/dtc/ft_run4b_3500.pkl
+    volumes:
+      - tgapi-data:/var/lib/telegram-bot-api
+      - ./work:/work
+      - ./models:/models:ro
+    mem_limit: 5g
+
+volumes:
+  tgapi-data:

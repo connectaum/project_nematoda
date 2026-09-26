@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "project_nematoda: automatic pose tracking and locomotion analysis of nematodes"
+abstract: >-
+  Tools that turn microscope videos of free-living nematodes into 49-point midlines
+  for every worm (including touching, crossing and coiled worms), per-worm tracks,
+  auto-labelled DeepLabCut projects and locomotion features.
+authors:
+  - family-names: Sidorov
+    given-names: Mikhail
+type: software
+version: 0.1.0
+date-released: 2026-09-26
+license: MIT
+repository-code: "https://github.com/connectaum/project_nematoda"
+keywords:
+  - nematodes
+  - Caenorhabditis
+  - locomotion
+  - pose estimation
+  - DeepLabCut
+  - SAM2
+  - behaviour analysis

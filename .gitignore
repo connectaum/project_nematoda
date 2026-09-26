@@ -1,0 +1,106 @@
+# ============================================================
+# project_nematoda — what is NOT published
+# ============================================================
+
+# ---- raw data and media (videos, images, presentations) ----
+videos/
+*.mp4
+*.avi
+*.mov
+*.MOV
+*.mkv
+*.m4v
+*.jpg
+*.jpeg
+*.JPG
+*.png
+*.gif
+*.tif
+*.tiff
+*.pdf
+*.pptx
+*.ppt
+*.docx
+*.xlsx
+!docs/**
+
+# ---- processing outputs / generated projects ----
+auto_labels/
+analysis/
+nematoda-*/
+nematoda[0-9]*-*/
+sam2_test/
+work/
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.csv
+*.zip
+*.log
+*.log.bak
+
+# ---- benchmark data, results, reports (code in bench/ IS published) ----
+bench/frames/
+bench/synth/
+bench/results/
+bench/dtc_clips/
+bench/logs/
+bench/morpho/
+bench/omni_train/
+bench/_archive_rejected/
+bench/*.md
+bench/dtc/*.md
+
+# ---- model weights (distributed separately) ----
+models/
+wormbot/models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# ---- secrets ----
+.env
+*.env
+!.env.example
+secrets.*
+
+# ---- one-off patch scripts and backups ----
+*.bak
+*.bak-*
+patch_*.py
+
+# ---- theory, course materials, Claude outputs, scratch ----
+Claude outputs/
+_to_delete/
+_transfer_tmp/
+README_DLC.md
+.claude/
+CLAUDE.md
+
+# ---- third-party clones (reviewed, not ours) ----
+external/
+
+# ---- environments / build artefacts ----
+.venv/
+.venv-*/
+**/.venv/
+**/.venv-*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wormsam2/bin/
+wormsam2/wormsam2.cmd
+.ipynb_checkpoints/
+
+# ---- OS / editors ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

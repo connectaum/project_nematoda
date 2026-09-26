@@ -1,0 +1,7 @@
+#!/bin/bash
+# Запуск DLC из изолированного окружения dlc-env.
+#   ./dlc-env/dlc            -> GUI (python -m deeplabcut)
+#   ./dlc-env/dlc script.py  -> любой python-скрипт в этом окружении
+HERE="$(cd "$(dirname "$0")" && pwd)"
+if [ $# -eq 0 ]; then exec "$HERE/.venv/bin/python" -m deeplabcut; fi
+exec "$HERE/.venv/bin/python" "$@"
